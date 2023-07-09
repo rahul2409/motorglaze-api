@@ -1,4 +1,4 @@
-package in.motorglaze.Entity;
+package in.motorglaze.Memberships.Entity;
 
 import jakarta.persistence.*;
 
