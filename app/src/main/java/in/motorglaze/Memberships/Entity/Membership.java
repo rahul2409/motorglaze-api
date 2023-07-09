@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "memberships")
-public class Memberships {
+public class Membership {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
@@ -99,9 +99,9 @@ public class Memberships {
         this.createdDate = createdDate;
     }
 
-    public Memberships(){}
+    public Membership(){}
 
-    public Memberships(String membershipType, int washesIncluded, int cleaningIncluded, int polishesIncluded, int duration, float amount, LocalDateTime createdDate) {
+    public Membership(String membershipType, int washesIncluded, int cleaningIncluded, int polishesIncluded, int duration, float amount, LocalDateTime createdDate) {
         this.membershipType = membershipType;
         this.washesIncluded = washesIncluded;
         this.cleaningIncluded = cleaningIncluded;

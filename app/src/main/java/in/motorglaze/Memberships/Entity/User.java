@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="users")
-public class Users{
+public class User {
 
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -33,7 +33,7 @@ public class Users{
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
-    public Users(){}
+    public User(){}
 
     public String getId() {
         return id;
@@ -43,7 +43,7 @@ public class Users{
         this.id = id;
     }
 
-    public Users(String firstName, String lastName, String email, String userPrivilege, String phoneNumber, LocalDateTime createdDate) {
+    public User(String firstName, String lastName, String email, String userPrivilege, String phoneNumber, LocalDateTime createdDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "stores")
-public class Stores {
+public class Store {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
@@ -26,9 +26,9 @@ public class Stores {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-    public Stores(){}
+    public Store(){}
 
-    public Stores(String location, String type, String storeOwner, LocalDateTime creationDate) {
+    public Store(String location, String type, String storeOwner, LocalDateTime creationDate) {
         this.location = location;
         this.type = type;
         this.storeOwner = storeOwner;
