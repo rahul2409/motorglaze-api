@@ -3,6 +3,8 @@ package in.motorglaze.Memberships.Entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "transactions")
 public class Transaction {
@@ -24,12 +26,23 @@ public class Transaction {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name="transaction_date")
+    private LocalDateTime dateTime;
+
     public Transaction(){}
     public Transaction(String transactionType, String status, float amount, String userId) {
         this.transactionType = transactionType;
         this.status = status;
         this.amount = amount;
         this.userId = userId;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public String getId() {
@@ -74,12 +87,13 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transactions{" +
+        return "Transaction{" +
                 "id='" + id + '\'' +
                 ", transactionType='" + transactionType + '\'' +
                 ", status='" + status + '\'' +
                 ", amount=" + amount +
                 ", userId='" + userId + '\'' +
+                ", dateTime=" + dateTime +
                 '}';
     }
 }

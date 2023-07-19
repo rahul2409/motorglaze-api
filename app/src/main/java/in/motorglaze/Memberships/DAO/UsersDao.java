@@ -4,5 +4,5 @@ import in.motorglaze.Memberships.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsersDao extends JpaRepository<User, String>{
-
+    User findByEmail(String email);
 }

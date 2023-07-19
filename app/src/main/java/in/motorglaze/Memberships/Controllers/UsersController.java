@@ -34,6 +34,12 @@ public class UsersController {
         return user;
     }
 
+    @GetMapping("/email={email}")
+    public User findUserByEmail(@PathVariable String email){
+        User tempUser = _userService.findUserByEmail(email);
+        return tempUser;
+    }
+
     @PostMapping
     public User addNewUser(@RequestBody User theUser){
         UUID uuid = UUID.randomUUID();

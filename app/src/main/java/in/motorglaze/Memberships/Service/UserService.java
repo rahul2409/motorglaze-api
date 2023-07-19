@@ -17,6 +17,10 @@ public class UserService {
         return _users.findAll();
     }
 
+    public User findUserByEmail(String email){
+        return _users.findByEmail(email);
+    }
+
     public User findById(String Id){
         Optional<User> temporaryUser = _users.findById(Id);
         User user = null;
